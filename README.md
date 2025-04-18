@@ -34,4 +34,4 @@ Welcome to my System Design and LLD collection! This repository contains a curat
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/system-design-LLD.git
+   git clone https://github.com/aryan1234-coder/LLD-System-Design.git
