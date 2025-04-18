@@ -146,7 +146,7 @@ public class BookMyShow {
          for(int i=70;i<100;i++){
              Seat seat=new Seat();
              seat.setSeatId(i);
-             seat.setSeatCategory(SeatCategory.SILVER);
+             seat.setSeatCategory(SeatCategory.PLATINUM);
              seatList.add(seat);
 
          }
