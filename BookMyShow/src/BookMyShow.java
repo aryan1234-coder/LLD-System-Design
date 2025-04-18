@@ -18,7 +18,7 @@ public class BookMyShow {
 
     }
 
-    private void createBooking(City userCity,String movieTitle) {
+    public  void createBooking(City userCity,String movieTitle) {
          List<Movie> movies=movieController.getMoviesByCity(userCity);
 
          Movie interestedMovie=null;
@@ -29,12 +29,39 @@ public class BookMyShow {
          }
 
          Map<Theatre,List<Show>> showTheatreWise=theatreController.getAllShow(interestedMovie,userCity);
+        Map.Entry<Theatre,List<Show>> entry = showTheatreWise.entrySet().iterator().next();
+        List<Show> runningShows = entry.getValue();
+        Show interestedShow = runningShows.get(0);
+
+        int seatNumber = 30;
+        List<Integer> bookedSeats = interestedShow.getBookedSeat();
+        if(!bookedSeats.contains(seatNumber)){
+            bookedSeats.add(seatNumber);
+            //startPayment
+            Booking booking = new Booking();
+            List<Seat> myBookedSeats = new ArrayList<>();
+            for(Seat screenSeat : interestedShow.getScreen().getAllSeats()) {
+                if(screenSeat.getSeatId() == seatNumber) {
+                    myBookedSeats.add(screenSeat);
+                }
+            }
+            booking.setSeatBooked(myBookedSeats);
+            booking.setShow(interestedShow);
+        } else {
+            //throw exception
+            System.out.println("seat already booked, try again");
+            return;
+        }
+
+        System.out.println("BOOKING SUCCESSFUL");
+
+
 
 
 
     }
 
-    private void inialtize(){
+    public void inialtize(){
          // create movies
         // create theatre
 
@@ -43,7 +70,7 @@ public class BookMyShow {
 
     }
 
-    private void createTheatre(){
+    public void createTheatre(){
          Movie avenger=movieController.getMovieByName("AVENGERS THE END GAME");
          Movie drama=movieController.getMovieByName("DRAMAS THE END GAME");
 
@@ -77,7 +104,7 @@ public class BookMyShow {
 
     }
 
-    private Show createShow(int showId,Screen screen,Movie movie,int showStartTime) {
+    public  Show createShow(int showId,Screen screen,Movie movie,int showStartTime) {
          Show show=new Show();
          show.setShowId(showId);
          show.setScreen(screen);
@@ -88,7 +115,7 @@ public class BookMyShow {
 
     }
 
-    private List<Screen> createScreen(){
+    public  List<Screen> createScreen(){
          List<Screen> screenList=new ArrayList<>();
          Screen screen1=new Screen();
          screen1.setScreenId(1);
@@ -98,7 +125,7 @@ public class BookMyShow {
 
 
     }
-    private List<Seat> createSeat(){
+    public List<Seat> createSeat(){
          List<Seat> seatList=new ArrayList<>();
 
          for(int i=0;i<40;i++){
@@ -127,7 +154,7 @@ public class BookMyShow {
 
     }
 
-    private void createMovies(){
+    public  void createMovies(){
          Movie avengers = new Movie();
          avengers.setMovieId(1);
          avengers.setMovieTitle("AVENGERS THE END GAME");
