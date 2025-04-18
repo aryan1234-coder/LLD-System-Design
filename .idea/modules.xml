@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BookMyShow/BookMyShow.iml" filepath="$PROJECT_DIR$/BookMyShow/BookMyShow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chain Responsibility Design Pattern/Chain Responsibility Design Pattern.iml" filepath="$PROJECT_DIR$/Chain Responsibility Design Pattern/Chain Responsibility Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cricket Game/Cricket Game.iml" filepath="$PROJECT_DIR$/Cricket Game/Cricket Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Decorator Pattern/Decorator Pattern.iml" filepath="$PROJECT_DIR$/Decorator Pattern/Decorator Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/File System COmposite Pattern/File System COmposite Pattern.iml" filepath="$PROJECT_DIR$/File System COmposite Pattern/File System COmposite Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Notify_Me_Observable pattern.iml" filepath="$PROJECT_DIR$/Notify_Me_Observable pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Proxy Design Pattern/Proxy Design Pattern.iml" filepath="$PROJECT_DIR$/Proxy Design Pattern/Proxy Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Splitwise/Splitwise.iml" filepath="$PROJECT_DIR$/Splitwise/Splitwise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tic Tac To game/Tic Tac To game.iml" filepath="$PROJECT_DIR$/Tic Tac To game/Tic Tac To game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vehicle Rental LLD/Vehicle Rental LLD.iml" filepath="$PROJECT_DIR$/Vehicle Rental LLD/Vehicle Rental LLD.iml" />
+    </modules>
+  </component>
+</project>
