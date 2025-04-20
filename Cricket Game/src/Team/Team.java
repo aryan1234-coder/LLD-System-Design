@@ -1,6 +1,7 @@
 package Team;
 
 import Team.Player.PlayerBattingController;
+import Team.Player.PlayerBowlingController;
 import Team.Player.PlayerDetails;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class Team {
     public Queue<PlayerDetails> playersPlayin11;
     public List<PlayerDetails> benchPlayer;
     public PlayerBattingController playerBattingController;
-    public PlayerBattingController playerBowlingController;
+    public PlayerBowlingController playerBowlingController;
     public boolean isWinner;
 
     public Team(String teamName, Queue<PlayerDetails> playersPlayin11, List<PlayerDetails> benchPlayer,List<PlayerDetails> bowlers) {

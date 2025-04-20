@@ -16,10 +16,17 @@ public class MovieController {
 
     void addMovie(Movie movie,City city) {
         allMovies.add(movie);
-        List<Movie> list = movieList.getOrDefault(city,new ArrayList<>());
 
-        list.add(movie);
-        movieList.put(city,list);
+        if(movieList.containsKey(city)){
+                movieList.get(city).add(movie);
+        }
+        else{
+            List<Movie> newList= new ArrayList<>();
+            newList.add(movie);
+            movieList.put(city, newList);
+
+        }
+
 
     }
     Movie getMovieByName(String name){

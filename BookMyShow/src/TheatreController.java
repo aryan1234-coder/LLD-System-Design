@@ -18,10 +18,17 @@ public class TheatreController {
 
     public void addTheatre(Theatre theatre,City city) {
         theatreList.add(theatre);
-        List<Theatre> theatres=cityVsTheatre.getOrDefault(city,new ArrayList<>());
 
-        theatres.add(theatre);
-        cityVsTheatre.put(city,theatres);
+        if(cityVsTheatre.containsKey(city)) {
+            cityVsTheatre.get(city).add(theatre);
+        }
+        else{
+            List<Theatre> theatres= new ArrayList<>();
+            theatres.add(theatre);
+            cityVsTheatre.put(city, theatres);
+
+        }
+
     }
 
     Map<Theatre,List<Show>> getAllShow(Movie movie,City city) {
