@@ -1,6 +1,6 @@
 package TicTac;
 
-public class Cell {
+public class Cell extends Player {
 
     int row;
     int col;

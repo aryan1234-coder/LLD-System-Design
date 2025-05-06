@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import  java.util.Scanner;
-public class TicTacToe {
+public class TicTacToe extends Board {
     private Board board;
     private Player[] players;
     private int currentPlayerIndex;

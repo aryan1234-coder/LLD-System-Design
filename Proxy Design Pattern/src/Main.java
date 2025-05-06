@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
       try {
           EmployeeDao employeeDao= new EmployeeProxy();
-          employeeDao.get("ADMIN",123);
+          employeeDao.get("CLIENT",123);
           System.out.println("fetching full created");
       } catch (Exception e) {
           System.out.println(e.getMessage());

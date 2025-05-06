@@ -1,6 +1,6 @@
 package TicTac;
 
-public class Board {
+public class Board  {
 
     private final int SIZE = 3;
     private Cell[][] board;

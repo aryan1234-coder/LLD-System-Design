@@ -10,13 +10,17 @@ public class VehicleInventoryManagement {
 
 
  public VehicleInventoryManagement(List<Vehicle> vehicles) {
-     this.vehicles = vehicles;
+    vehicles=new ArrayList<>();
  }
 
 
 
     public List<Vehicle> getVehicles() {
         return vehicles;
+    }
+    
+    public void addVehicle(Vehicle v) {
+    	vehicles.add(v);
     }
 
     public void setVehicles(List<Vehicle> vehicles) {

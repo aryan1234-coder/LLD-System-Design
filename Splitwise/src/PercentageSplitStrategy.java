@@ -8,7 +8,7 @@ public class PercentageSplitStrategy implements SplitStrategy {
         List<Split> splits = new ArrayList<Split>();
             for(int i = 0; i < participants.size(); i++){
                 double partTimeAmount=(shares.get(i)*amount)/100.0;
-                splits.add(new Split(partTimeAmount,participants.get(i)));
+                splits.add(new Split(participants.get(i),partTimeAmount));
             }
 
             return splits;

@@ -1,6 +1,7 @@
+//import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.List;
-
+//
 public class EqualsSplitStrategy implements SplitStrategy {
 
     @Override
@@ -8,8 +9,12 @@ public class EqualsSplitStrategy implements SplitStrategy {
         List<Split> splits = new ArrayList<>();
         double shareAmount=amount/participants.size();
         for(User participant: participants){
-            splits.add(new Split(shareAmount,participant));
+            splits.add(new Split(participant,shareAmount));
         }
         return splits;
     }
 }
+
+
+
+

@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+    import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,5 +41,54 @@ public class ExpenseManager {
             }
         }
     }
+    
+    public void settleUp() {
+        Map<User, Double> netBalance = new HashMap<>();
+
+        // Step 1: Calculate net balances for each user
+        for (User u1 : balanceSheet.keySet()) {
+            for (User u2 : balanceSheet.get(u1).keySet()) {
+                double amount = balanceSheet.get(u1).get(u2);
+                netBalance.put(u1, netBalance.getOrDefault(u1, 0.0) - amount);
+                netBalance.put(u2, netBalance.getOrDefault(u2, 0.0) + amount);
+            }
+        }
+
+        // Step 2: Separate debtors and creditors
+        List<Split> debtors = new ArrayList<>();
+        List<Split> creditors = new ArrayList<>();
+
+        for (Map.Entry<User, Double> entry : netBalance.entrySet()) {
+            if (entry.getValue() < -0.01) {
+                debtors.add(new Split(entry.getKey(), entry.getValue()));
+            } else if (entry.getValue() > 0.01) {
+                creditors.add(new Split(entry.getKey(), entry.getValue()));
+            }
+        }
+
+        int i = 0, j = 0;
+
+        // Step 3: Greedy Settlement
+        System.out.println("\nSettlement Transactions:");
+        while (i < debtors.size() && j < creditors.size()) {
+            Split debtor = debtors.get(i);
+            Split creditor = creditors.get(j);
+
+            double minAmount = Math.min(-debtor.amount, creditor.amount);
+
+            System.out.println(debtor.user.name + " pays " + creditor.user.name + " ₹" + minAmount);
+
+            debtor.amount += minAmount;
+            creditor.amount -= minAmount;
+
+            if (Math.abs(debtor.amount) < 0.01) i++;
+            if (Math.abs(creditor.amount) < 0.01) j++;
+        }
+    }
+
+    // Helper class to hold user and their net balance
+    
+   
+
 
 }

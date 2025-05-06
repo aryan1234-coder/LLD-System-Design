@@ -9,7 +9,7 @@ public class UnequalSplitStrategy implements SplitStrategy {
 
       for(int i = 0; i < participants.size(); i++){
 
-          splits.add(new Split(shares.get(i),participants.get(i)));
+          splits.add(new Split(participants.get(i),shares.get(i)));
 
       }
 
